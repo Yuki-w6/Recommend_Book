@@ -10,7 +10,7 @@
     <!--Bootstrap-->
     <script data-ad-client="ca-pub-1976866996688533" async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <title>Recommend Book</title>
+    <title>みんなの図書館</title>
 </head>
 
 <body>
@@ -18,8 +18,7 @@
         <nav class="navbar navbar-expand navbar-dark" style='background-color:#2d2d2d'>
             <ul class='navbar-nav mr-auto'>
                 <li class=nav-item>
-                    <a href="{% url 'book:book_list' %}" class='navbar-brand' style="margin-left: 25px;">Recommend
-                        Book</a>
+                    <a href="{% url 'book:book_list' %}" class='navbar-brand' style="margin-left: 25px;">みんなの図書館</a>
                 </li>
             </ul>
             <ul class='navbar-nav'>
@@ -45,7 +44,7 @@
         </nav>
     </header>
     <main role='main' class='container-field'>
-        <div style="margin-left: 25px; margin-right: 25px; margin-bottom: 15px; padding: 0px;">
+        <div style="margin-left: 25px; margin-right: 25px; margin-bottom: 0px; padding: 0px;">
         </div>
         {% block content %}{% endblock content %}
 
