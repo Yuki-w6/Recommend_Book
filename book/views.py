@@ -1,4 +1,4 @@
-from django.http import Http404, HttpResponseRedirect
+from django.http import Http404, HttpResponseRedirect, HttpResponse
 from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.core.paginator import Paginator
@@ -58,9 +58,9 @@ def like(request, book_id):
 
     # この関数が呼び出された時にlikeに１を足して保存する
     book.like += 1
-
     book.save()
-    return redirect('/book/')
+
+    return HttpResponse(book.like)
 
 
 class Book_Add(generic.edit.CreateView):

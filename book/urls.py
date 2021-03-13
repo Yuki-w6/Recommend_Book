@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-from django.views.generic import RedirectView
 
 app_name = 'book'
 urlpatterns = [
@@ -9,7 +8,6 @@ urlpatterns = [
     path('<int:book_id>/edit/', views.book_edit, name="book_edit"),
     path('<int:book_id>/delete/', views.book_delete, name='book_delete'),
     path('add/', views.Book_Add.as_view(), name='book_add'),
-    path('<int:book_id>/like/', views.like, name='like'),
-    path('<int:book_id>/like/', RedirectView.as_view(url='/book/')),
+    path('book/<int:book_id>/like/', views.like, name='like'),
 
 ]
