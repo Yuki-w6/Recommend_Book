@@ -118,7 +118,7 @@
             <td class="text-center">
                 <form>
                     {% csrf_token %}
-                    <a href="javascript:void(0)" name="{{ book.id }}" type="button" id="{{ book.like }}"
+                    <a href="javascript:void(0)" id="book_{{ book.id }}" name="{{ book.id }}" type="button"
                         class="like btn btn-primary btn-sm" value="いいね ({{ book.like }})">いいね ({{ book.like }})</a>
                 </form>
             </td>
@@ -175,9 +175,7 @@
 <div style="clear: both;"></div>
 <div style="padding-bottom: 100px;"></div>
 
-
 <script type="text/javascript">
-
     function getCookie(name) {
         var cookieValue = null;
         if (document.cookie && document.cookie != '') {
@@ -220,9 +218,7 @@
             },
             dataType: 'json'
         }).done(function (data) {
-            alert(data['book_like']);
-            alert($('#"{{ book_id }}"').val());
-            $(this).text("");
+            $('#book_' + String(data['book_id'])).text('いいね' + '(' + String(data['book_like']) + ')');
         })
     });
 

@@ -69,7 +69,7 @@ def like(request, book_id):
 
     #book_like = serializers.serialize("json", book.like)
 
-    return JsonResponse({"book_like": book.like})
+    return JsonResponse({"book_like": book.like, "book_id": book.id})
 
 
 class Book_Add(generic.edit.CreateView):
